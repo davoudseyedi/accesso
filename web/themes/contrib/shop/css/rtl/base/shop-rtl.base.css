@@ -1,0 +1,37 @@
+/* Insert your Bootstrap (RTL) overrides for bootstrap-rtl library. */
+@font-face {
+  font-family: "IRANSans";
+  src: url("../../../fonts/iransans/eot/IRANSansWeb.eot");
+  src: url("../../../fonts/iransans/eot/IRANSansWeb.eot?#iefix") format("embedded-opentype"), url("../../../fonts/iransans/woff2/IRANSansWeb.woff2") format("woff2"), url("../../../fonts/iransans/woff/IRANSansWeb.woff") format("woff"), url("../../../fonts/iransans/ttf/IRANSansWeb.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+body {
+  font-family: "IRANSans", Tahoma;
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "IRANSans", Tahoma;
+}
+
+a {
+  font-family: "IRANSans", Tahoma;
+}
+
+span {
+  font-family: "IRANSans", Tahoma;
+}
+
+p {
+  font-family: "IRANSans", Tahoma;
+  font-size: 16px;
+}
+
+.owl-wrapper-outer {
+  direction: ltr;
+}
+
+/*# sourceMappingURL=shop-rtl.base.css.map */

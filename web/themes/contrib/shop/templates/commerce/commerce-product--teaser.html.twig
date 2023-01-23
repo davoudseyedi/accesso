@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classesFull = [
+  'product',
+  'product--teaser',
+  'product--teaser--' ~ product_entity.title.value|clean_class
+]
+%}
+
+<article {{ attributes.addClass(classesFull) }}>
+
+  <div class="image mb-3">
+    <a href="{{ product_url }}">{{ product.field_main_image.0 }}</a>
+  </div>
+
+  <h2 class="prod-title text-center mb-3"><a href="{{ product_url }}">{{ product_entity.title.value }}</a></h2>
+
+{#  {% if product.variation_list_price.0 %}#}
+{#    <span class="old-price d-flex align-items-center justify-content-center">{{ product.variation_list_price.0 }} تومان</span>#}
+{#  {% endif %}#}
+  {% if product.variation_price.0 %}
+  <p class="price text-center">{{ product.variation_price.0 }} تومان</p>
+  {% endif %}
+  {#    {{ product.variations }}#}
+</article>

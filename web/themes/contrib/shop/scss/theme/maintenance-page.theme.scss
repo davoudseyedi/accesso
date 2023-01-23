@@ -1,0 +1,17 @@
+// shop Maintenance page custom style.
+// -----------------------------------------------------------------------------
+@import "../../node_modules/bootstrap/scss/functions";  // Bootstrap functions.
+@import "../../node_modules/bootstrap/scss/mixins";     // Bootstrap mixins.
+@import "../variables";                   // shop variables.
+@import "../mixins";                      // shop mixins.
+// -----------------------------------------------------------------------------
+
+/* Insert your shop maintenance page custom SASS styling. */
+
+.maintenance-page {
+  footer {
+    .footer-credits {
+      @include font-size(0.75rem);
+    }
+  }
+}

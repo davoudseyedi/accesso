@@ -1,0 +1,128 @@
+type: theme
+base theme: vartheme_bs4
+name: "shop - Subtheme of Vartheme (Bootstrap 4 - SASS)"
+description: "Based on Bootstrap 4 framework using SASS, and extending Vartheme (Bootstrap 4 - SASS)."
+project: vartheme_bs4
+core_version_requirement: ^9 || ^10
+regions:
+  navigation: "Navigation"
+  navigation_collapsible: "Navigation Collapsible"
+  header: "Top Bar"
+  highlighted: "Highlighted"
+  help: "Help"
+  content: "Content"
+  slider: "slider"
+  featured: "featured"
+  suggestions: "suggestions"
+  newest: "newest"
+  banner: "banner"
+  statics: "statics"
+  categories: "categories"
+  brands: "brands"
+  best_sellers: "best_sellers"
+  sidebar_first: "Primary"
+  sidebar_second: "Secondary"
+  footer: "Footer First"
+  footer2: "Footer Second"
+  footer3: "Footer Third"
+  copyright: "Copyright"
+  page_top: "Page top"
+  page_bottom: "Page bottom"
+libraries:
+  # Bootstrap styles and scripts libraries.
+  - shop/bootstrap-styles
+  - shop/bootstrap-scripts
+  # shop Global styles and scripts libraries.
+  - shop/global-styles
+  - shop/global-scripts
+  - shop/framework
+  # shop Varbase Media Hero Slider style.
+  - shop/heroslider
+  # Fonts: Uncomment the following if you want to use the roboto font.
+  #- shop/roboto
+libraries-override:
+  vartheme_bs4/framework: false
+  vartheme_bs4/bootstrap-styles: false
+  vartheme_bs4/bootstrap-scripts: false
+  vartheme_bs4/global-styles: false
+  vartheme_bs4/global-scripts: false
+  # Heroslider: Uncomment the following to disable the vartheme_bs4/heroslider
+  #             Libraray if it was enabled in vartheme_bs4 heroslider styling.
+  # vartheme_bs4/heroslider: false
+
+  vartheme_bs4/breadcrumb: shop/breadcrumb
+  vartheme_bs4/dropbutton: shop/dropbutton
+  vartheme_bs4/book-navigation: shop/book-navigation
+  vartheme_bs4/file: shop/file
+  vartheme_bs4/form: shop/form
+  vartheme_bs4/search-form: shop/search-form
+  vartheme_bs4/indented: shop/indented
+  vartheme_bs4/maintenance_page: shop/maintenance_page
+  vartheme_bs4/node: shop/node
+  vartheme_bs4/sidebar-collapse: shop/sidebar-collapse
+  vartheme_bs4/tabs: shop/tabs
+  vartheme_bs4/verticaltabs: shop/verticaltabs
+  vartheme_bs4/affix: shop/affix
+  vartheme_bs4/alerts: shop/alerts
+  vartheme_bs4/fontawesome: shop/fontawesome
+  vartheme_bs4/moderation-state: shop/moderation-state
+
+  # Varbase module compnents overrides in shop.
+  varbase_bootstrap_paragraphs/vbp-colors: shop/vbp-colors
+  betterlogin/betterlogin_css: shop/betterlogin
+  varbase_heroslider_media/general-styling: shop/heroslider
+
+  # Change the default social auth style and icons.
+  social_auth/auth-icons: shop/auth-icons
+
+  vartheme_bs4/drupal.node.preview: shop/drupal.node.preview
+  vartheme_bs4/comments: shop/comments
+  vartheme_bs4/navbar.admin: shop/navbar.admin
+
+ckeditor_stylesheets:
+  # Base
+  - css/base/bootstrap.base.css
+  - css/base/bootstrap5-utilities.base.css
+  - css/base/vartheme_bs4.base.css
+  - css/base/shop.base.css
+  # Components
+  - css/components/ajax.component.css
+  - css/components/alerts.component.css
+  - css/components/autocomplete.component.css
+  - css/components/bs-callouts.component.css
+  - css/components/contextual.component.css
+  - css/components/details.component.css
+  - css/components/feed-icon.component.css
+  - css/components/field.component.css
+  - css/components/file.component.css
+  - css/components/header.component.css
+  - css/components/help.component.css
+  - css/components/icons.component.css
+  - css/components/image-button.component.css
+  - css/components/item-list.component.css
+  - css/components/list-group.component.css
+  - css/components/navbar.component.css
+  - css/components/node.component.css
+  - css/components/page.component.css
+  - css/components/progress-bar.component.css
+  - css/components/shortcut.component.css
+  - css/components/sidebar.component.css
+  - css/components/site-footer.component.css
+  - css/components/skip-link.component.css
+  - css/components/table.component.css
+  - css/components/tabledrag.component.css
+  - css/components/tableselect.component.css
+  - css/components/tablesort.component.css
+  - css/components/tablesort-indicator.component.css
+  - css/components/textarea.component.css
+  - css/components/ui-dialog.component.css
+  - css/components/ui-widget.component.css
+  - css/components/user.component.css
+  - css/components/varicons.component.css
+  - css/components/vb-tags.component.css
+  - css/components/views.component.css
+  # Layout
+  - css/layout/edge2edge.layout.css
+  - css/layout/equal-height.layout.css
+  # Theme
+  - css/theme/content.theme.css

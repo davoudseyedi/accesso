@@ -1,0 +1,144 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classesFull = [
+  'product',
+  'product--full',
+  'product--full--' ~ product_entity.title.value|clean_class
+]
+%}
+
+<article {{ attributes.addClass(classesFull) }}>
+  <div class="row">
+    <div class="col-12 d-flex back-and-share">
+      {# Back button. #}
+      <a href="/products" class="back-to-products text-dark ml-auto mb-3">{{ 'بازگشت به محصولات'|t }}</a>
+
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-12 col-md-4">
+      {{ product.field_main_image }}
+    </div>
+    <div class="col-12 col-md-5">
+      <div class="product__intro">
+        <div class="col-sm-12">
+          <div class="product__intro product__intro--full-width">
+            <h1 class="page-title mb-3">{{ product_entity.title.value }}</h1>
+
+            <div class="cat mb-3">
+              <p><strong>دسته بندی:</strong>
+                {{ product.field_product_category.0 }}</p>
+            </div>
+            {% if  product.field_product_brand.0 %}
+              <div class="brand mb-3">
+                <p>برند: {{ product.field_product_brand }}</p>
+              </div>
+
+            {% endif %}
+            {% if  product.field_short_description.0  %}
+              <div class="features mb-3">
+                <strong>
+                  ویژگیهای محصول
+                </strong>
+                <p>
+                  {{ product.field_short_description.0 }}
+                </p>
+              </div>
+            {% endif %}
+
+
+            {#            {{ kint(product_entity) }}#}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="cart-info">
+        <ul class="static-texts">
+          <li><i class="far fa-check-circle mr-2"></i>
+            ارائه تضمین اصل بودن کالا</li>
+          <li><i class="far fa-check-circle mr-2"></i>
+            ارسال رایگان بالای ۳۵۰,۰۰۰ تومان</li>
+          <li><i class="far fa-check-circle mr-2"></i>
+            ضمانت بازگشت کالا 7 روزه</li>
+        </ul>
+        {% if product.variation_list_price.0 %}
+           <span class="old-price d-flex align-items-center justify-content-center">{{ product.variation_list_price.0 }} تومان</span>
+        {% endif %}
+        <span class="price d-flex align-items-center justify-content-center text-danger font-weight-bold text-24">{{ product.variation_price.0 }} تومان</span>
+        {{ product.variations }}
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      {# Additional details. #}
+      <div class="additional-details">
+        {# Tabs. #}
+        <ul id="product-tabs" class="nav nav-tabs" role="tablist">
+          {% if product.body|render|trim is not empty  %}
+            <li role="presentation">
+              <a class="nav-link active" data-target="#description" id="description-tab" aria-controls="description" role="tab" data-toggle="tab">
+                {{ 'توضیحات محصول'|t }}
+              </a>
+            </li>
+          {% endif %}
+
+          <li role="presentation">
+            <a data-target="#reviews" aria-controls="reviews" id="reviews-tab" role="tab" data-toggle="tab">
+              {{ 'دیدگاه ها'|t }}
+            </a>
+          </li>
+        </ul>
+
+        {# Tab content. #}
+        <div id="tabContent" class="tab-content">
+          {% if product.body|render|trim is not empty %}
+            <div role="tabpanel" class="tab-pane fade show active" aria-labelledby="description-tab" id="description">
+              {{ product.body.0 }}
+            </div>
+          {% endif %}
+
+          <div role="tabpanel" class="tab-pane fade" id="reviews" aria-labelledby="reviews-tab">
+                        {{ product.field_review }}
+          </div>
+        </div>
+      </div>
+      {# / Additional details. #}
+    </div>
+  </div>
+
+  {# Recommended products. #}
+  {#      {% if product.field_recommended_products|render|trim is not empty %}#}
+  {#        <div class="row">#}
+  {#          <div class="col-sm-12">#}
+  {#            <div class="recommended-products">#}
+  {#              {{ product.field_recommended_products }}#}
+  {#            </div>#}
+  {#          </div>#}
+  {#        </div>#}
+  {#      {% endif %}#}
+</article>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="82ba91e1-7004-4440-975b-0a26f6b25cb2" name="myserever" url="http://136.243.125.2">
+        <fileTransfer rootFolder="/var/www/demo.accesso.ir" accessType="SFTP" host="136.243.125.2" port="22" sshConfigId="a37b88d7-81cc-41eb-943c-76e8fc8e6273" sshConfig="administrator@136.243.125.2:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

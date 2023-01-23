@@ -1,0 +1,11 @@
+// Tabs component style.
+// -----------------------------------------------------------------------------
+@import "../../node_modules/bootstrap/scss/functions";  // Bootstrap functions.
+@import "../../node_modules/bootstrap/scss/mixins";     // Bootstrap mixins.
+@import "../variables";                   // shop variables.
+@import "../mixins";                      // shop mixins.
+// -----------------------------------------------------------------------------
+
+nav.tabs {
+  margin-bottom: $spacer;
+}
